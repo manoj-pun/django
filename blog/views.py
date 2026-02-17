@@ -12,7 +12,7 @@ class PostListView(ListView):
     model = Post
     template_name = "blog/home.html"
     context_object_name = "posts"
-    ordering = ["-data_posted"]
+    ordering = ["-date_posted"]
 
 class PostDetailView(DetailView):
     model = Post
