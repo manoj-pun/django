@@ -8,8 +8,11 @@ def home(request):
     }
     return render(request, "blog/home.html", context)
 
-class PostViewList(ListView):
+class PostListView(ListView):
     model = Post
+    template_name = "blog/home.html"
+    context_object_name = "posts"
+    ordering = ["-data_posted"]
 
 def about(request):
     return render(request, "blog/about.html", {"title":"About"})
